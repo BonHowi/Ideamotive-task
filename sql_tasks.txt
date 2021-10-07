@@ -1,0 +1,10 @@
+1.
+SELECT class, AVG(mass) AS avg_mass
+FROM meteors
+GROUP BY class;
+
+2. 
+SELECT class FROM (SELECT class, AVG(mass) AS avg_mass
+FROM meteors
+GROUP BY class)
+WHERE avg_mass < 5000;
